@@ -1,0 +1,4 @@
+<Parameters>
+    <Parameter name='A'>valueA</Parameter>
+    <Parameter name='B'>valueB</Parameter>
+</Parameters>

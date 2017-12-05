@@ -1,0 +1,13 @@
+{
+  "Parameters" : {
+    "Parameter" : [
+      {
+        "name" : "A",
+        "" : "valueA"
+      },{
+        "name" : "B",
+        "" : "valueB"
+      }
+    ]
+  }
+}

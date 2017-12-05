@@ -1,0 +1,8 @@
+<Root>
+  <Parameters>
+    <Parameter name='one'>value1</Parameter>
+    <Parameter name='two'>value2</Parameter>
+    <Parameter name='three'>value3</Parameter>
+  </Parameters>
+  <Something/>
+</Root>

@@ -1,0 +1,8 @@
+<InvokeLambda>
+  <Profile>jdbc:oracle:thin:@192.168.1.2:1521/xe</Profile>
+  <Parameters>
+    <Parameter name='one'>value1</Parameter>
+    <Parameter name='two'>value2</Parameter>
+  </Parameters>
+  <Output>context-variable-name</Output>
+</InvokeLambda>
