@@ -91,7 +91,6 @@ import java.util.Map;
  * }
  * </pre>
  */
-
 public class ArrayInferringUntypedObjectDeserializer extends UntypedObjectDeserializer {
 
     @Override

@@ -23,8 +23,8 @@ public class BasicXmlDeserializationTest {
     private XmlMapper xmlMapper;
     private ObjectMapper objectMapper;
     private static boolean wantStrictComparison = true;
-    private static boolean wantVerbose = false;
-    
+    private static boolean wantVerbose = false; // true
+
     @BeforeClass
     public void beforeClass() throws Exception {
         xmlMapper = new XmlMapper();
@@ -32,7 +32,7 @@ public class BasicXmlDeserializationTest {
         xmlMapper.registerModule(new SimpleModule().addDeserializer(Object.class, new ArrayInferringUntypedObjectDeserializer()));
         objectMapper = new ObjectMapper();
     }
-    
+
     @DataProvider(name = "batch1")
     public Object[][] getDataForBatch1() throws Exception {
 
@@ -86,7 +86,7 @@ public class BasicXmlDeserializationTest {
             System.out.printf("%s\nINPUT:\n%s\n", cpath, xml);
         XMLStreamReader sr = XMLInputFactory.newFactory().createXMLStreamReader(new FileInputStream(cpath));
         Map map = (Map) xmlMapper.readValue(sr, Object.class);
-        
+
         Assert.assertTrue( jsonFile.exists(), "file " + jsonFile.getCanonicalPath());
         String expectedJson = new String(Files.readAllBytes(Paths.get(jsonFile.getCanonicalPath())), StandardCharsets.UTF_8);
         String actualJson = objectMapper.writeValueAsString(map);
@@ -96,5 +96,5 @@ public class BasicXmlDeserializationTest {
         }
         JSONAssert.assertEquals(cpath, actualJson, expectedJson, wantStrictComparison);
     }
-    
+
 }
