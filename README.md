@@ -9,14 +9,14 @@ There are two challenges to deserializing arbitrary XML with Jackson.
 
 1. XML has a root element, while a JSON object does not. The Jackson library was designed to handle JSON  primarily, so when deserializing XML into a java.util.Map, jackskon loses or discards the root element.
 
-2. The UntypedObjectDeserializer in Jackson does not map multiple child elements with the same name into a list or array. 
+2. The UntypedObjectDeserializer in Jackson does not map multiple child elements with the same name into a list or array.
 
 
 As an example of item 1, if you deserialize with jackson's default UntypedObjectDeserializer, given this XML input:
 ```xml
 <Root>
   <Parameters>
-    <Parameter name='A'>valueA</Parameter> <!-- level 2 -->
+    <Parameter name='A'>valueA</Parameter>
   </Parameters>
 </Root>
 ```
@@ -42,7 +42,7 @@ if you add a second Parameter element, like this:
 ```xml
 <Root>
   <Parameters>
-    <Parameter name='A'>valueA</Parameter> <!-- level 2 -->
+    <Parameter name='A'>valueA</Parameter>
     <Parameter name='B'>valueB</Parameter>
   </Parameters>
 </Root>

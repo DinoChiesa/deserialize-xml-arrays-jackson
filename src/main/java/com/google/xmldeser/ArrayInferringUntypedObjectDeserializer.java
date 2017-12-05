@@ -26,7 +26,7 @@ import java.util.Map;
  * <pre>
  * {@code
  * <Parameters>
- *   <Parameter name='A'>valueA</Parameter> <!-- level 2 -->
+ *   <Parameter name='A'>valueA</Parameter>
  * </Parameters>
  * }
  * </pre>
@@ -45,7 +45,7 @@ import java.util.Map;
  * <pre>
  * {@code
  * <Parameters>
- *   <Parameter name='A'>valueA</Parameter> <!-- level 2 -->
+ *   <Parameter name='A'>valueA</Parameter>
  *   <Parameter name='B'>valueB</Parameter>
  * </Parameters>
  * }
