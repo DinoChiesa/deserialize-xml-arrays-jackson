@@ -21,6 +21,15 @@ As an example of item 1, if you deserialize with jackson's default UntypedObject
 </Root>
 ```
 
+...using code like this:
+```java
+String canonicalPath = "/users/foo/bar/something.xml";
+String xml = new String(Files.readAllBytes(Paths.get(canonicalPath)), StandardCharsets.UTF_8);
+XMLStreamReader sr = XMLInputFactory.newFactory().createXMLStreamReader(new FileInputStream(cpath));
+XmlMapper mapper = new XmlMapper();
+Map m = (Map) mapper.readValue(sr, Object.class);
+```
+
 ...you will get this output (shown in json form):
 ```json
 {
@@ -33,8 +42,7 @@ As an example of item 1, if you deserialize with jackson's default UntypedObject
 }
 ```
 
-Notice the Root element is gone.
-
+Everything looks _pretty good_.  But do notice: the Root element is gone. That's issue #1 above.
 
 
 As an example of item 2, if you deserialize with jackson's default UntypedObjectDeserializer,
@@ -48,7 +56,7 @@ if you add a second Parameter element, like this:
 </Root>
 ```
 
-...the second child element named Parameter
+...and de-serialize with the same basic code, the second child element named Parameter
 overwrites the previous one. This is the JSON output:
 ```json
 {
